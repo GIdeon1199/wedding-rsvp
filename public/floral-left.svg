@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 600" fill="none">
+  <!-- Large blue flower center-left -->
+  <circle cx="100" cy="280" r="28" fill="#1B3A6B" opacity="0.7"/>
+  <ellipse cx="100" cy="235" rx="16" ry="32" fill="#1B3A6B" opacity="0.65" transform="rotate(-15 100 235)"/>
+  <ellipse cx="135" cy="260" rx="16" ry="30" fill="#1B3A6B" opacity="0.6" transform="rotate(30 135 260)"/>
+  <ellipse cx="130" cy="305" rx="15" ry="28" fill="#1B3A6B" opacity="0.6" transform="rotate(70 130 305)"/>
+  <ellipse cx="100" cy="325" rx="14" ry="27" fill="#1B3A6B" opacity="0.65" transform="rotate(110 100 325)"/>
+  <ellipse cx="65"  cy="308" rx="14" ry="27" fill="#1B3A6B" opacity="0.6" transform="rotate(150 65 308)"/>
+  <ellipse cx="60"  cy="265" rx="14" ry="28" fill="#1B3A6B" opacity="0.6" transform="rotate(-40 60 265)"/>
+  <circle cx="100" cy="280" r="14" fill="#2a4d8a" opacity="0.8"/>
+  <circle cx="100" cy="280" r="7" fill="#3d6eb5" opacity="0.9"/>
+
+  <!-- Small blue flower upper-right -->
+  <circle cx="300" cy="100" r="18" fill="#1B3A6B" opacity="0.6"/>
+  <ellipse cx="300" cy="72" rx="10" ry="20" fill="#1B3A6B" opacity="0.55" transform="rotate(-10 300 72)"/>
+  <ellipse cx="322" cy="85" rx="10" ry="18" fill="#1B3A6B" opacity="0.5" transform="rotate(30 322 85)"/>
+  <ellipse cx="322" cy="115" rx="10" ry="18" fill="#1B3A6B" opacity="0.5" transform="rotate(70 322 115)"/>
+  <ellipse cx="300" cy="128" rx="9" ry="17" fill="#1B3A6B" opacity="0.55" transform="rotate(110 300 128)"/>
+  <ellipse cx="278" cy="115" rx="9" ry="17" fill="#1B3A6B" opacity="0.5" transform="rotate(150 278 115)"/>
+  <ellipse cx="278" cy="85" rx="9" ry="18" fill="#1B3A6B" opacity="0.5" transform="rotate(-40 278 85)"/>
+  <circle cx="300" cy="100" r="9" fill="#2a4d8a" opacity="0.8"/>
+
+  <!-- Medium blue flower lower-right -->
+  <circle cx="340" cy="450" r="22" fill="#1B3A6B" opacity="0.65"/>
+  <ellipse cx="340" cy="420" rx="13" ry="24" fill="#1B3A6B" opacity="0.6" transform="rotate(-20 340 420)"/>
+  <ellipse cx="364" cy="435" rx="12" ry="22" fill="#1B3A6B" opacity="0.55" transform="rotate(25 364 435)"/>
+  <ellipse cx="362" cy="465" rx="12" ry="21" fill="#1B3A6B" opacity="0.55" transform="rotate(65 362 465)"/>
+  <ellipse cx="340" cy="478" rx="11" ry="21" fill="#1B3A6B" opacity="0.6" transform="rotate(110 340 478)"/>
+  <ellipse cx="318" cy="465" rx="11" ry="21" fill="#1B3A6B" opacity="0.55" transform="rotate(155 318 465)"/>
+  <ellipse cx="316" cy="435" rx="12" ry="22" fill="#1B3A6B" opacity="0.55" transform="rotate(-40 316 435)"/>
+  <circle cx="340" cy="450" r="11" fill="#2a4d8a" opacity="0.8"/>
+
+  <!-- Gold leaf stem 1 -->
+  <path d="M60 400 Q90 350 130 320 Q160 290 180 240" stroke="#B8860B" stroke-width="1.5" fill="none" opacity="0.7"/>
+  <ellipse cx="95" cy="355" rx="8" ry="18" fill="#B8860B" opacity="0.55" transform="rotate(-40 95 355)"/>
+  <ellipse cx="120" cy="325" rx="8" ry="16" fill="#B8860B" opacity="0.5" transform="rotate(-25 120 325)"/>
+  <ellipse cx="155" cy="270" rx="7" ry="14" fill="#B8860B" opacity="0.45" transform="rotate(-10 155 270)"/>
+  <ellipse cx="175" cy="245" rx="6" ry="12" fill="#B8860B" opacity="0.4" transform="rotate(10 175 245)"/>
+
+  <!-- Gold leaf stem 2 -->
+  <path d="M200 500 Q230 460 260 420 Q290 380 310 340" stroke="#B8860B" stroke-width="1.5" fill="none" opacity="0.65"/>
+  <ellipse cx="235" cy="455" rx="7" ry="15" fill="#B8860B" opacity="0.5" transform="rotate(-35 235 455)"/>
+  <ellipse cx="270" cy="412" rx="7" ry="14" fill="#B8860B" opacity="0.45" transform="rotate(-20 270 412)"/>
+  <ellipse cx="300" cy="352" rx="6" ry="13" fill="#B8860B" opacity="0.4" transform="rotate(5 300 352)"/>
+
+  <!-- Gold leaf stem 3 — top area -->
+  <path d="M350 30 Q320 70 280 110 Q250 145 220 170" stroke="#B8860B" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <ellipse cx="320" cy="72" rx="7" ry="14" fill="#B8860B" opacity="0.5" transform="rotate(40 320 72)"/>
+  <ellipse cx="285" cy="112" rx="7" ry="13" fill="#B8860B" opacity="0.45" transform="rotate(25 285 112)"/>
+  <ellipse cx="228" cy="165" rx="6" ry="12" fill="#B8860B" opacity="0.4" transform="rotate(10 228 165)"/>
+
+  <!-- Small scattered buds -->
+  <circle cx="50" cy="150" r="5" fill="#1B3A6B" opacity="0.4"/>
+  <circle cx="370" cy="220" r="4" fill="#1B3A6B" opacity="0.35"/>
+  <circle cx="200" cy="80" r="5" fill="#1B3A6B" opacity="0.35"/>
+  <circle cx="380" cy="350" r="4" fill="#1B3A6B" opacity="0.3"/>
+  <circle cx="30"  cy="480" r="6" fill="#1B3A6B" opacity="0.4"/>
+
+  <!-- Thin trailing vines -->
+  <path d="M20 200 Q80 180 120 200 Q160 220 200 190" stroke="#1B3A6B" stroke-width="0.8" fill="none" opacity="0.3"/>
+  <path d="M150 520 Q200 490 240 510 Q280 530 320 500" stroke="#1B3A6B" stroke-width="0.8" fill="none" opacity="0.3"/>
+  <path d="M250 30 Q290 60 320 40" stroke="#B8860B" stroke-width="0.8" fill="none" opacity="0.35"/>
+</svg>

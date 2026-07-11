@@ -1,26 +1,277 @@
+/* ── FONTS ──────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Great+Vibes&family=Jost:wght@300;400&display=swap');
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ── DESIGN TOKENS ──────────────────────────────────────────────────── */
+@theme {
+  /* Palette */
+  --color-navy:      #0f1c35;
+  --color-gold:      #c9924a;
+  --color-cream:     #f5ede0;
+  --color-ink:       #1a1a1a;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Aliases kept for legacy page refs */
+  --color-midnight-500: #0f1c35;
+  --color-midnight-600: #0b1628;
+  --color-midnight-200: #122240;
+  --color-champagne-100: #f5ede0;
+  --color-champagne-200: #eddcca;
+  --color-champagne-300: #e0cdb5;
+  --color-champagne-400: #d4bc9a;
+  --color-champagne-50:  #fdfaf5;
+  --color-orange-400: #c9924a;
+  --color-orange-500: #b8813b;
+  --color-gold-300:  #d4a86a;
+  --color-gold-400:  #c9924a;
+  --color-gold-500:  #b8813b;
+  --color-navy-500:  #0f1c35;
+  --color-cream-200: #f5ede0;
+  --color-cream-300: #eddcca;
+  --color-steel-400: #4a7faf;
+  --color-steel-500: #4682b4;
+  --color-charcoal:  #1a1a1a;
+  --color-ivory:     #fdfaf5;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Fonts */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-serif:   "Cormorant Garamond", Georgia, serif;
+  --font-script:  "Great Vibes", cursive;
+  --font-sans:    "Jost", system-ui, sans-serif;
+
+  /* Breakpoints */
+  --breakpoint-xs: 390px;
+
+  /* Keyframes */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-10px); }
+  }
+  @keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  @keyframes pulseSlow {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.55; }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── BASE ────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+body {
+  background: #f5ede0;
+  color: #1a1a1a;
+  font-family: "Jost", system-ui, sans-serif;
+}
+
+/* ── FONT HELPERS ────────────────────────────────────────────────────── */
+.font-display  { font-family: "Cormorant Garamond", Georgia, serif; }
+.font-serif    { font-family: "Cormorant Garamond", Georgia, serif; }
+.font-script   { font-family: "Great Vibes", cursive; }
+/* .font-sans already works via Tailwind token above */
+
+/* ── LABEL CAPS ──────────────────────────────────────────────────────── */
+.label-caps {
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ── DIVIDERS ────────────────────────────────────────────────────────── */
+.section-divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c9924a, transparent);
+  margin: 0 auto;
+}
+
+.ornament-diamond {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #c9924a;
+  transform: rotate(45deg);
+}
+
+.section-divider-diamond {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.section-divider-diamond::before,
+.section-divider-diamond::after {
+  content: '';
+  flex: 1;
+  max-width: 56px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c9924a);
+}
+.section-divider-diamond::after {
+  background: linear-gradient(90deg, #c9924a, transparent);
+}
+
+/* ── CARDS ───────────────────────────────────────────────────────────── */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(15, 28, 53, 0.12);
+}
+
+.glass-card {
+  background: rgba(245, 237, 224, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 146, 74, 0.2);
+}
+
+/* ── BUTTONS ─────────────────────────────────────────────────────────── */
+.btn-accent {
+  background: #c9924a;
+  color: #fff;
+  transition: opacity 0.25s ease, transform 0.2s ease;
+}
+.btn-accent:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn-outline-gold {
+  border: 1.5px solid #c9924a;
+  color: #c9924a;
+  background: transparent;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+.btn-outline-gold:hover {
+  background: #c9924a;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn-outline-cream {
+  border: 1.5px solid rgba(201, 146, 74, 0.7);
+  color: #1a1a1a;
+  background: transparent;
+  transition: border-color 0.25s, background 0.25s, transform 0.2s;
+}
+.btn-outline-cream:hover {
+  border-color: #c9924a;
+  background: rgba(201, 146, 74, 0.07);
+  transform: translateY(-1px);
+}
+
+.btn-outline-white {
+  border: 1.5px solid rgba(255,255,255,0.5);
+  color: #fff;
+  background: transparent;
+  transition: border-color 0.25s, color 0.25s, transform 0.2s;
+}
+.btn-outline-white:hover {
+  border-color: #c9924a;
+  color: #c9924a;
+  transform: translateY(-1px);
+}
+
+/* Legacy */
+.btn-gold { background: #c9924a; color: #fff; }
+.btn-gold:hover { opacity: 0.88; }
+
+/* ── PAGE HERO BANNER ────────────────────────────────────────────────── */
+.page-hero-banner {
+  background: linear-gradient(135deg, #0f1c35 0%, #162445 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── COUNTDOWN ───────────────────────────────────────────────────────── */
+.countdown-band {
+  background: #0f1c35;
+  position: relative;
+  overflow: hidden;
+}
+.countdown-number {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(3.2rem, 8vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1;
+  color: #c9924a;
+  letter-spacing: -0.02em;
+}
+.countdown-label {
+  font-family: "Jost", sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(245, 237, 224, 0.5);
+}
+.countdown-pipe {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: rgba(201, 146, 74, 0.55);
+  font-weight: 300;
+  line-height: 1;
+  align-self: center;
+}
+
+/* ── DETAILS BAR ─────────────────────────────────────────────────────── */
+.details-bar {
+  background: #0f1c35;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr 1px 1fr;
+  align-items: center;
+}
+@media (max-width: 640px) {
+  .details-bar { grid-template-columns: 1fr 1fr; }
+  .details-bar-divider { display: none; }
+}
+.details-bar-divider {
+  width: 1px;
+  height: 56px;
+  background: rgba(201,146,74,0.3);
+  align-self: center;
+  justify-self: center;
+}
+
+/* ── FORM INPUTS ─────────────────────────────────────────────────────── */
+.form-input {
+  width: 100%;
+  padding: 14px 18px;
+  background: white;
+  border: 1.5px solid #ddd0c0;
+  border-radius: 4px;
+  font-family: "Jost", sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.form-input:focus {
+  border-color: #c9924a;
+  box-shadow: 0 0 0 3px rgba(201, 146, 74, 0.15);
+}
+.form-input::placeholder { color: #aaa; }
+
+/* ── SCROLLBAR ───────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f5ede0; }
+::-webkit-scrollbar-thumb { background: #c9924a; border-radius: 3px; }
