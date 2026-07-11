@@ -6,6 +6,7 @@ import { Toaster } from "react-hot-toast";
 import { WEDDING_CONFIG } from "@/lib/wedding-config";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.ishmaelandberyl2026.com"),
   title: `${WEDDING_CONFIG.coupleDisplay} — ${WEDDING_CONFIG.weddingDateDisplay}`,
   description: `Join us as we celebrate the marriage of ${WEDDING_CONFIG.coupleDisplay} on ${WEDDING_CONFIG.weddingDateDisplay} at ${WEDDING_CONFIG.ceremonyVenue}. RSVP online — no account required.`,
   keywords: ["wedding", "RSVP", WEDDING_CONFIG.bride, WEDDING_CONFIG.groom, "save the date", WEDDING_CONFIG.hashtag],
