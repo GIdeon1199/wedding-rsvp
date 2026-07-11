@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "@/components/Reveal";
 import SectionHeader from "@/components/SectionHeader";
 import { WEDDING_CONFIG } from "@/lib/wedding-config";
-import { ChevronDown, Mail, Phone } from "lucide-react";
+import { ChevronDown, Mail } from "lucide-react";
 
 const faqs = [
   {
@@ -156,13 +156,6 @@ export default function FAQPage() {
                 >
                   <Mail size={14} />
                   Email Us
-                </a>
-                <a
-                  href={`tel:${WEDDING_CONFIG.contactPhone}`}
-                  className="btn-outline-cream inline-flex items-center justify-center gap-2 px-8 py-3 text-navy-500 font-sans font-medium text-xs uppercase tracking-[0.2em]"
-                >
-                  <Phone size={14} />
-                  Call Us
                 </a>
               </div>
             </div>
