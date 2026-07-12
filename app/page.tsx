@@ -223,16 +223,16 @@ export default function HomePage() {
           >
             <Link
               href="/rsvp"
-              className="flex items-center justify-center w-full py-3.5 border border-gold-500/50 rounded-full bg-cream-100/90 backdrop-blur-sm"
+              className="btn-accent flex items-center justify-center gap-3 w-full py-3 rounded-sm shadow-sm"
               style={{
                 fontSize: "11px",
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
                 fontFamily: "Jost, sans-serif",
-                color: "#1a1a1a",
               }}
             >
               RSVP Now
+              <ArrowRight size={13} />
             </Link>
           </motion.div>
         </div>
