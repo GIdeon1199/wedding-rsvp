@@ -427,13 +427,13 @@ export default function HomePage() {
               className="font-sans mt-1"
               style={{ fontSize: "12px", letterSpacing: "0.1em", color: "#f5ede0", textTransform: "uppercase" }}
             >
-              174 Portuguese Social Club Way
+              {WEDDING_CONFIG.ceremonyVenue}
             </p>
             <p
               className="font-sans"
               style={{ fontSize: "11px", letterSpacing: "0.1em", color: "rgba(245,237,224,0.45)", textTransform: "uppercase" }}
             >
-              Pawtucket, RI
+              {WEDDING_CONFIG.ceremonyAddress}
             </p>
           </div>
         </div>
