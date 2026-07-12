@@ -7,6 +7,7 @@ import SectionHeader from "@/components/SectionHeader";
 import { WEDDING_CONFIG } from "@/lib/wedding-config";
 import { ChevronDown, Mail } from "lucide-react";
 import { ReactNode } from "react";
+import Link from "next/link";
 
 type FAQ = {
   q: string;
@@ -16,7 +17,15 @@ type FAQ = {
 const faqs: FAQ[] = [
   {
     q: "Do I need an invitation to RSVP?",
-    a: "No — this site is open to all invited guests. Simply fill out the RSVP form with your name and contact information. If you received a save-the-date card or personal invitation, you're on the list!",
+    a: (
+      <>
+        Yes — if you received a save-the-date card or personal invite, you are on the list! Simply fill out the{" "}
+        <Link href="/rsvp" className="text-gold-500 hover:text-gold-600 font-medium underline underline-offset-2">
+          RSVP form here
+        </Link>{" "}
+        with the required info.
+      </>
+    ),
   },
   {
     q: "What is the RSVP deadline?",
