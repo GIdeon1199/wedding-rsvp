@@ -12,7 +12,7 @@ const attire = [
     items: [
       "Tuxedo or dark formal suit",
       "White dress shirt",
-      "Tie or bow tie (midnight blue or burnt orange recommended)",
+      <>Tie or bow tie (<strong>midnight blue</strong> or <strong>burnt orange</strong> recommended)</>,
       "Polished dress shoes",
     ],
   },
@@ -29,7 +29,7 @@ const attire = [
 ];
 
 const avoid = [
-  "All-white or cream (reserved for the bride)",
+  <><strong>All-white or cream</strong> (reserved for the bride)</>,
   "All-black only",
   "Casual jeans or t-shirts",
   "Bright neon colors",

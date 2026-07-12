@@ -6,6 +6,7 @@ import { WEDDING_CONFIG } from "@/lib/wedding-config";
 import { MapPin, Clock, Info, Gem, Wine, Shirt, Car, Baby, Camera, Star } from "lucide-react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { ReactNode } from "react";
 
 const detailCards = [
   {
@@ -32,12 +33,18 @@ const detailCards = [
   },
 ];
 
-const notes = [
+type Note = {
+  icon: ReactNode;
+  title: string;
+  desc: ReactNode;
+};
+
+const notes: Note[] = [
   { icon: <Car size={20} strokeWidth={1.5} className="text-gold-400" />, title: "Parking", desc: "Free parking is available at the venue. There is ample space in the parking lot — please follow the signs upon arrival." },
-  { icon: <Baby size={20} strokeWidth={1.5} className="text-gold-400" />, title: "Children", desc: "We adore your little ones! This is an adults-only reception, however children are welcome at the ceremony." },
-  { icon: <Camera size={20} strokeWidth={1.5} className="text-gold-400" />, title: "Photography", desc: "We have a professional photographer. Please be fully present during the ceremony. Feel free to take photos at the reception!" },
-  { icon: <Star size={20} strokeWidth={1.5} className="text-gold-400" />, title: "Flowers & Gifts", desc: "Please do not bring flowers to the venue — we have florals arranged. Gift table will be available at the reception." },
-  { icon: <MapPin size={20} strokeWidth={1.5} className="text-gold-400" />, title: "RSVP Deadline", desc: `Please RSVP by ${WEDDING_CONFIG.rsvpDeadline} so we can finalize seating and catering.` },
+  { icon: <Baby size={20} strokeWidth={1.5} className="text-gold-400" />, title: "Children", desc: <>We adore your little ones! This is an <strong>adults-only reception</strong>, however children are welcome at the ceremony.</> },
+  { icon: <Camera size={20} strokeWidth={1.5} className="text-gold-400" />, title: "Photography", desc: <>We have a professional photographer. Please be fully present during the ceremony. <strong>Feel free to take photos at the reception!</strong></> },
+  { icon: <Star size={20} strokeWidth={1.5} className="text-gold-400" />, title: "Flowers & Gifts", desc: <><strong>Please do not bring flowers to the venue</strong> — we have florals arranged. Gift table will be available at the reception.</> },
+  { icon: <MapPin size={20} strokeWidth={1.5} className="text-gold-400" />, title: "RSVP Deadline", desc: <>Please RSVP by <strong>{WEDDING_CONFIG.rsvpDeadline}</strong> so we can finalize seating and catering.</> },
 ];
 
 export default function DetailsPage() {

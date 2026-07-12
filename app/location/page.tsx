@@ -153,7 +153,7 @@ export default function LocationPage() {
             <SectionHeader
               label="Accommodations"
               title="Where to Stay"
-              subtitle="While we recommend the Hampton Inn & Suites, please feel free to book any hotel in the area that best suits your needs."
+              subtitle={<>While we recommend the <strong>Hampton Inn & Suites</strong>, please feel free to <strong>book any hotel in the area</strong> that best suits your needs.</>}
             />
             <div className="mt-8 rounded-2xl p-8 border border-cream-300/60" style={{ background: "#FDFAF5" }}>
               <p className="font-display text-xl text-center sm:text-left text-navy-500 mb-1">
