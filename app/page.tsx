@@ -204,7 +204,7 @@ export default function HomePage() {
               className="font-sans text-center font-medium"
               style={{ fontSize: "13px", letterSpacing: "0.15em", color: "rgba(26,26,26,0.75)", textTransform: "uppercase" }}
             >
-              Portuguese Social Club
+              {WEDDING_CONFIG.ceremonyVenue}
             </p>
             <p
               className="font-sans text-center font-medium"

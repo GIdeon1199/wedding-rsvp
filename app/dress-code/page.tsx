@@ -90,8 +90,8 @@ export default function DressCodePage() {
                     <h3 className="font-display text-2xl font-light text-center sm:text-left text-navy-500">{a.title}</h3>
                   </div>
                   <ul className="space-y-3">
-                    {a.items.map((item) => (
-                      <li key={item} className="flex items-start gap-3 font-sans text-sm text-navy-500/60">
+                    {a.items.map((item, index) => (
+                      <li key={index} className="flex items-start gap-3 font-sans text-sm text-navy-500/60">
                         <Check size={14} strokeWidth={2} className="text-gold-400 mt-0.5 shrink-0" />
                         {item}
                       </li>
@@ -144,8 +144,8 @@ export default function DressCodePage() {
                 </h3>
               </div>
               <ul className="space-y-3">
-                {avoid.map((item) => (
-                  <li key={item} className="flex items-start gap-3 font-sans text-sm text-navy-500/55">
+                {avoid.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3 font-sans text-sm text-navy-500/60">
                     <XIcon size={13} strokeWidth={2} className="text-red-400 mt-0.5 shrink-0" />
                     {item}
                   </li>
