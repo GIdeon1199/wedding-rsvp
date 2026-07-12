@@ -113,7 +113,7 @@ export default function GalleryPage() {
                 After the wedding, share your favourite moments using our hashtag and we&apos;ll
                 add them to this gallery for everyone to enjoy.
               </p>
-              <p className="font-script text-[clamp(1.8rem,7vw,2.5rem)] break-words break-all sm:break-normal text-gold-500">
+              <p className="font-script text-[clamp(1.3rem,4.5vw,2.5rem)] text-gold-500">
                 {WEDDING_CONFIG.hashtag}
               </p>
             </div>
