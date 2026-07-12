@@ -6,15 +6,21 @@ import Reveal from "@/components/Reveal";
 import SectionHeader from "@/components/SectionHeader";
 import { WEDDING_CONFIG } from "@/lib/wedding-config";
 import { ChevronDown, Mail } from "lucide-react";
+import { ReactNode } from "react";
 
-const faqs = [
+type FAQ = {
+  q: string;
+  a: ReactNode;
+};
+
+const faqs: FAQ[] = [
   {
     q: "Do I need an invitation to RSVP?",
     a: "No — this site is open to all invited guests. Simply fill out the RSVP form with your name and contact information. If you received a save-the-date card or personal invitation, you're on the list!",
   },
   {
     q: "What is the RSVP deadline?",
-    a: `Please RSVP by ${WEDDING_CONFIG.rsvpDeadline}. After that date, we won't be able to guarantee your seat as final headcounts will be confirmed with our caterer and venue.`,
+    a: <>Please RSVP by <strong>{WEDDING_CONFIG.rsvpDeadline}</strong>. After that date, we won't be able to guarantee your seat as final headcounts will be confirmed with our caterer and venue.</>,
   },
   {
     q: "Is the reception adults-only?",
@@ -30,7 +36,7 @@ const faqs = [
   },
   {
     q: "Will there be transportation between venues?",
-    a: "No transportation is needed between venues since both the ceremony and the reception will be held at the Portuguese Social Club in Pawtucket, RI.",
+    a: <>The church service will be held at <strong>The Apostolic Church</strong>, and the reception will take place at the <strong>Portuguese Social Club</strong>. Guests are responsible for their own transportation between venues.</>,
   },
   {
     q: "Are there dietary accommodations?",
@@ -38,7 +44,7 @@ const faqs = [
   },
   {
     q: "What time should I arrive?",
-    a: `Please aim to arrive by ${WEDDING_CONFIG.ceremonyTime} for the ceremony. Doors open at 3:00 PM. Arriving late may disturb the ceremony, so we kindly ask all guests to be seated on time.`,
+    a: <>Please aim to arrive by <strong>{WEDDING_CONFIG.ceremonyTime}</strong> for the ceremony. Arriving late may disturb the ceremony, so we kindly ask all guests to be seated on time.</>,
   },
   {
     q: "Can I take photos during the ceremony?",
@@ -50,7 +56,7 @@ const faqs = [
   },
 ];
 
-function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
+function FAQItem({ faq, index }: { faq: FAQ; index: number }) {
   const [open, setOpen] = useState(false);
 
   return (

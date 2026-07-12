@@ -76,7 +76,7 @@ export default function DetailsPage() {
               <SectionHeader
                 label="Venue"
                 title="Where to Find Us"
-                subtitle={`The ceremony and reception will both be held at the ${WEDDING_CONFIG.ceremonyVenue} in Pawtucket, Rhode Island on ${WEDDING_CONFIG.weddingDateDisplay}.`}
+                subtitle={`The ceremony will be held at ${WEDDING_CONFIG.ceremonyVenue}, followed by a reception at the ${WEDDING_CONFIG.receptionVenue} in Pawtucket, Rhode Island.`}
               />
             </div>
           </Reveal>
@@ -88,7 +88,7 @@ export default function DetailsPage() {
                   <div
                     className="h-48 bg-cover bg-center"
                     style={{
-                      backgroundImage: `url('https://images.unsplash.com/photo-${i === 0 ? "1519741497674-611481863552" : "1511795409834-ef04bbd61622"}?w=800&q=70')`,
+                      backgroundImage: `url('https://images.unsplash.com/photo-${i === 0 ? "1438232992991-995b7058bbb3" : "1511795409834-ef04bbd61622"}?w=800&q=70')`,
                     }}
                   />
                   <div className="p-8">

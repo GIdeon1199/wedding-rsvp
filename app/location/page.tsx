@@ -11,18 +11,18 @@ const locations = [
     address: WEDDING_CONFIG.ceremonyAddress,
     time: `Ceremony at ${WEDDING_CONFIG.ceremonyTime}`,
     label: "Ceremony",
-    parking: "Free parking is available in the venue's parking lot. Follow signage upon arrival.",
-    tips: ["Enter via the main entrance on Portuguese Social Club Way", "Rideshare drop-off at the front entrance", "Accessible parking near main entrance"],
+    parking: "",
+    tips: [],
     mapUrl: `https://maps.google.com/?q=${encodeURIComponent(WEDDING_CONFIG.ceremonyAddress)}`,
-    imgId: "1477587458883-47145ed94b25",
+    imgId: "1438232992991-995b7058bbb3",
   },
   {
     name: WEDDING_CONFIG.receptionVenue,
     address: WEDDING_CONFIG.receptionAddress,
     time: `Reception at ${WEDDING_CONFIG.receptionTime}`,
     label: "Reception",
-    parking: "Free parking is available in the venue's lot. Follow signage upon arrival.",
-    tips: ["Reception hall entrance inside the venue", "Rideshare pickup/drop-off at front entrance", "Bar and dance floor on the main level"],
+    parking: "",
+    tips: [],
     mapUrl: `https://maps.google.com/?q=${encodeURIComponent(WEDDING_CONFIG.receptionAddress)}`,
     imgId: "1568515387631-8b650bbcdb90",
   },
@@ -83,29 +83,39 @@ export default function LocationPage() {
                 </div>
 
                 <div className="p-8">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  <div className={`grid grid-cols-1 gap-8 ${loc.parking || loc.tips.length > 0 ? 'sm:grid-cols-2' : 'max-w-md mx-auto'}`}>
                     {/* Parking info */}
-                    <div>
-                      <div className="flex items-center gap-2 mb-3">
-                        <Car size={18} strokeWidth={1.5} className="text-gold-400" />
-                        <h4 className="font-display text-lg text-center sm:text-left text-navy-500">Parking</h4>
+                    {(loc.parking || loc.tips.length > 0) && (
+                      <div>
+                        {loc.parking && (
+                          <>
+                            <div className="flex items-center gap-2 mb-3">
+                              <Car size={18} strokeWidth={1.5} className="text-gold-400" />
+                              <h4 className="font-display text-lg text-center sm:text-left text-navy-500">Parking</h4>
+                            </div>
+                            <p className="font-sans text-sm text-navy-500/55 leading-relaxed mb-5">
+                              {loc.parking}
+                            </p>
+                          </>
+                        )}
+                        {loc.tips.length > 0 && (
+                          <>
+                            <div className="flex items-center gap-2 mb-3">
+                              <Bus size={18} strokeWidth={1.5} className="text-gold-400" />
+                              <h4 className="font-display text-lg text-center sm:text-left text-navy-500">Getting Here</h4>
+                            </div>
+                            <ul className="space-y-2">
+                              {loc.tips.map((tip) => (
+                                <li key={tip} className="flex items-start gap-2 font-sans text-sm text-navy-500/55">
+                                  <span className="text-gold-400 mt-1">·</span>
+                                  {tip}
+                                </li>
+                              ))}
+                            </ul>
+                          </>
+                        )}
                       </div>
-                      <p className="font-sans text-sm text-navy-500/55 leading-relaxed mb-5">
-                        {loc.parking}
-                      </p>
-                      <div className="flex items-center gap-2 mb-3">
-                        <Bus size={18} strokeWidth={1.5} className="text-gold-400" />
-                        <h4 className="font-display text-lg text-center sm:text-left text-navy-500">Getting Here</h4>
-                      </div>
-                      <ul className="space-y-2">
-                        {loc.tips.map((tip) => (
-                          <li key={tip} className="flex items-start gap-2 font-sans text-sm text-navy-500/55">
-                            <span className="text-gold-400 mt-1">·</span>
-                            {tip}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    )}
 
                     {/* Details sidebar */}
                     <div className="space-y-4">
