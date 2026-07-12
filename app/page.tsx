@@ -322,9 +322,9 @@ export default function HomePage() {
 
             {/* LEFT — text */}
             <Reveal direction="left">
-              <div className="space-y-4 max-w-[85%] sm:max-w-none bg-cream-200/60 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-6 sm:p-0 rounded-2xl">
+              <div className="space-y-4 max-w-[85%] sm:max-w-md bg-white/85 backdrop-blur-md p-8 sm:p-10 rounded-3xl border border-white/60 shadow-lg">
                 {/* Label */}
-                <p className="label-caps" style={{ color: "#c9924a" }}>
+                <p className="label-caps" style={{ color: "#a87834" }}>
                   Our Story
                 </p>
 
@@ -335,7 +335,7 @@ export default function HomePage() {
                     fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
                     fontWeight: 400,
                     lineHeight: 1.2,
-                    color: "#1a1a1a",
+                    color: "#0f1c35",
                   }}
                 >
                   Two souls
@@ -346,23 +346,23 @@ export default function HomePage() {
                 {/* Body */}
                 <p
                   className="font-sans leading-relaxed"
-                  style={{ fontSize: "14px", color: "rgba(26,26,26,0.65)", maxWidth: "380px" }}
+                  style={{ fontSize: "14px", color: "rgba(15,28,53,0.75)", maxWidth: "380px" }}
                 >
                   From the moment we met, we knew our story was something special.
                   Today, we invite you to be part of the next chapter as we begin
                 </p>
                 <p
                   className="font-sans font-400 italic"
-                  style={{ fontSize: "14px", color: "#c9924a" }}
+                  style={{ fontSize: "15px", color: "#a87834" }}
                 >
                   forever together.
                 </p>
 
                 {/* CTA */}
-                <div className="pt-2">
+                <div className="pt-4">
                   <Link
                     href="/story"
-                    className="btn-outline-gold inline-flex items-center gap-3 px-8 py-3"
+                    className="btn-accent inline-flex items-center gap-3 px-8 py-3 rounded-sm shadow-sm"
                     style={{
                       fontSize: "11px",
                       letterSpacing: "0.2em",
