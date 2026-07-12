@@ -32,7 +32,7 @@ export default function Footer() {
             className="label-caps mt-3"
             style={{ fontSize: "10px", color: "rgba(245,237,224,0.35)" }}
           >
-            {WEDDING_CONFIG.weddingDateDisplay} · {WEDDING_CONFIG.ceremonyVenue}
+            {WEDDING_CONFIG.weddingDateDisplay} · {WEDDING_CONFIG.ceremonyVenue} · Pawtucket, RI
           </p>
         </div>
 
