@@ -3,7 +3,8 @@
 import Reveal from "@/components/Reveal";
 import SectionHeader from "@/components/SectionHeader";
 import { WEDDING_CONFIG } from "@/lib/wedding-config";
-import { ExternalLink, Package, Target, Palmtree, Banknote, Zap, Globe } from "lucide-react";
+import { ExternalLink, Package, Target, Palmtree, Banknote, Zap, Globe, Copy } from "lucide-react";
+import toast from "react-hot-toast";
 
 const registries = [
   {
@@ -94,16 +95,32 @@ export default function RegistryPage() {
                       {r.note}
                     </p>
                   )}
-                  <a
-                    href={r.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 w-full py-3 text-white text-xs font-sans font-medium uppercase tracking-[0.2em] transition-all hover:opacity-90 hover:-translate-y-0.5"
-                    style={{ background: r.color }}
-                  >
-                    <ExternalLink size={13} />
-                    {r.note ? "Copy Details" : `View ${r.name.split(" ")[0]}`}
-                  </a>
+                  {r.name === "Zelle" ? (
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText(r.note || "");
+                        toast.success("Zelle info copied! Please open your Zelle app and paste this info to send.", {
+                          duration: 5000,
+                        });
+                      }}
+                      className="inline-flex items-center justify-center gap-2 w-full py-3 text-white text-xs font-sans font-medium uppercase tracking-[0.2em] transition-all hover:opacity-90 hover:-translate-y-0.5"
+                      style={{ background: r.color }}
+                    >
+                      <Copy size={13} />
+                      Copy Zelle Info
+                    </button>
+                  ) : (
+                    <a
+                      href={r.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 w-full py-3 text-white text-xs font-sans font-medium uppercase tracking-[0.2em] transition-all hover:opacity-90 hover:-translate-y-0.5"
+                      style={{ background: r.color }}
+                    >
+                      <ExternalLink size={13} />
+                      {r.note ? "Copy Details" : `View ${r.name.split(" ")[0]}`}
+                    </a>
+                  )}
                 </div>
               </Reveal>
             ))}
