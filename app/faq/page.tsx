@@ -33,15 +33,15 @@ const faqs: FAQ[] = [
   },
   {
     q: "Is the reception adults-only?",
-    a: "Yes, the reception is an adults-only celebration (18+). Children are warmly welcome at the ceremony. We hope this gives parents the chance to relax and enjoy a special night out!",
+    a: <>Yes, the reception is an <strong>adults-only celebration (18+)</strong>. Children are warmly welcome at the ceremony. We hope this gives parents the chance to relax and enjoy a special night out!</>,
   },
   {
     q: "Can I bring a plus one?",
-    a: "Please check your invitation for plus-one details. If you received an invitation addressed to 'you and guest,' you are welcome to bring one additional guest. Please indicate this in your RSVP.",
+    a: <>Please check your invitation for plus-one details. If you received an invitation addressed to <strong>'you and guest,'</strong> you are welcome to bring one additional guest. Please indicate this in your RSVP.</>,
   },
   {
     q: "What should I wear?",
-    a: `The dress code is ${WEDDING_CONFIG.dressCode}. We'd love to see guests in elegant attire. Please check our Dress Code page for colour suggestions and style guidance. Please avoid wearing white or cream — that's for the bride!`,
+    a: <>The dress code is <strong>{WEDDING_CONFIG.dressCode}</strong>. We'd love to see guests in elegant attire. Please check our Dress Code page for colour suggestions and style guidance. <strong>Please avoid wearing white or cream — that's for the bride!</strong></>,
   },
   {
     q: "Will there be transportation between venues?",
@@ -49,19 +49,19 @@ const faqs: FAQ[] = [
   },
   {
     q: "Are there dietary accommodations?",
-    a: "Absolutely! Please indicate any dietary restrictions (vegan, vegetarian, gluten-free, nut allergy, etc.) in your RSVP form. Our caterer is fully equipped to accommodate all dietary needs.",
+    a: <>Absolutely! Please indicate any <strong>dietary restrictions</strong> (vegan, vegetarian, gluten-free, nut allergy, etc.) in your RSVP form. Our caterer is fully equipped to accommodate all dietary needs.</>,
   },
   {
     q: "What time should I arrive?",
-    a: <>Please aim to arrive by <strong>{WEDDING_CONFIG.ceremonyTime}</strong> for the ceremony. Arriving late may disturb the ceremony, so we kindly ask all guests to be seated on time.</>,
+    a: <>Please aim to arrive by <strong>12:00 PM</strong> for the ceremony. Arriving late may disturb the ceremony, so we kindly ask all guests to be seated on time.</>,
   },
   {
     q: "Can I take photos during the ceremony?",
-    a: "We're having an 'unplugged ceremony' — please keep phones and cameras away during the ceremony so everyone can be fully present. Our photographer will capture everything beautifully. Photography is absolutely encouraged at the reception!",
+    a: <>We're having an <strong>'unplugged ceremony'</strong> — please keep phones and cameras away during the ceremony so everyone can be fully present. Our photographer will capture everything beautifully. <strong>Photography is absolutely encouraged at the reception!</strong></>,
   },
   {
     q: "What if I have a question not answered here?",
-    a: `We're happy to help! Reach out to us at ${WEDDING_CONFIG.contactEmail} or ${WEDDING_CONFIG.contactEmail2} and we'll get back to you as soon as possible.`,
+    a: <>We're happy to help! Reach out to us at <strong>{WEDDING_CONFIG.contactEmail}</strong> or <strong>{WEDDING_CONFIG.contactEmail2}</strong> and we'll get back to you as soon as possible.</>,
   },
 ];
 
