@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -69,19 +70,19 @@ export default function Navigation() {
             className="flex items-center justify-between"
             style={{ height: "68px" }}
           >
-            {/* ── LEFT: Monogram ── */}
-            <Link href="/" className="shrink-0">
-              <span
-                className="font-display tracking-[0.3em]"
+            {/* ── LEFT: Logo ── */}
+            <Link href="/" className="shrink-0 flex items-center">
+              <Image
+                src="/Websitelogo.png"
+                alt="Logo"
+                width={80}
+                height={44}
+                className="h-11 w-auto object-contain"
                 style={{
-                  fontSize: "1.25rem",
-                  fontWeight: 400,
-                  color: navTransparent ? "#fff" : "#0f1c35",
-                  transition: "color 0.4s",
+                  filter: navTransparent ? "brightness(0) invert(1)" : "none",
+                  transition: "filter 0.3s",
                 }}
-              >
-                I&nbsp;|&nbsp;B
-              </span>
+              />
             </Link>
 
             {/* ── CENTER: Nav links (desktop) ── */}
@@ -181,12 +182,14 @@ export default function Navigation() {
               <div className="p-8">
                 {/* Drawer header */}
                 <div className="flex items-center justify-between mb-10">
-                  <span
-                    className="font-display tracking-[0.3em]"
-                    style={{ fontSize: "1.1rem", fontWeight: 400, color: "#f5ede0" }}
-                  >
-                    I&nbsp;|&nbsp;B
-                  </span>
+                  <Image
+                    src="/Websitelogo.png"
+                    alt="Logo"
+                    width={64}
+                    height={36}
+                    className="h-9 w-auto object-contain"
+                    style={{ filter: "brightness(0) invert(1)" }}
+                  />
                   <button
                     onClick={() => setMenuOpen(false)}
                     style={{ color: "rgba(245,237,224,0.6)" }}
