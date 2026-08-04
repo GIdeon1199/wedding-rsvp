@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "@/components/Reveal";
 import { WEDDING_CONFIG } from "@/lib/wedding-config";
-import { Calendar, MapPin, User, Mail, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, User, Mail, ArrowRight, Menu } from "lucide-react";
 
 /* ── Countdown helpers ──────────────────────────────────────────────── */
 const WEDDING_DATE = WEDDING_CONFIG.weddingDate;
@@ -57,6 +57,17 @@ export default function HomePage() {
     setShowTutorial(false);
     sessionStorage.setItem("tutorial_seen", "true");
   };
+
+  useEffect(() => {
+    if (showTutorial) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showTutorial]);
 
   const countUnits = [
     { value: timeLeft.days, label: "Days" },
@@ -543,37 +554,44 @@ export default function HomePage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-navy-500/90 backdrop-blur-md flex flex-col justify-between p-8 text-white select-none cursor-pointer"
-            onClick={dismissTutorial}
+            className="fixed inset-0 z-50 bg-navy-500/90 backdrop-blur-md flex flex-col justify-between p-8 text-white select-none"
           >
             {/* Top Menu Pointer */}
-            <div className="absolute top-6 right-6 text-right flex flex-col items-end gap-2 max-w-[220px]">
-              <motion.div
-                animate={{ y: [0, -6, 0], x: [0, 6, 0] }}
-                transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-                className="text-gold-400 text-3xl font-light"
-              >
-                ↗
-              </motion.div>
+            <div className="absolute top-6 right-6 text-right flex flex-col items-end gap-3 max-w-[240px]">
+              <div className="flex items-center gap-3">
+                <motion.div
+                  animate={{ y: [0, -6, 0], x: [0, 6, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                  className="text-gold-400 text-3xl font-light"
+                >
+                  ↗
+                </motion.div>
+                <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center bg-white/10 text-white shadow-inner">
+                  <Menu size={18} />
+                </div>
+              </div>
               <p className="font-sans text-[11px] uppercase tracking-wider text-white font-medium leading-relaxed">
-                Click the menu here to explore more pages
+                Click this menu icon to explore more pages
               </p>
             </div>
 
             {/* Center Content */}
             <div className="flex-1 flex flex-col items-center justify-center text-center px-6 max-w-md mx-auto">
-              <p className="font-script text-4xl text-gold-400 mb-2">Welcome to Our Site</p>
-              <h2 className="font-display text-2xl font-light text-white mb-6 uppercase tracking-wider">
+              <p className="font-script text-5xl text-gold-400 mb-2">Welcome to Our Site</p>
+              <h2 className="font-display text-2xl font-light text-white mb-8 uppercase tracking-wider">
                 Ishmael & Beryl
               </h2>
+              
+              {/* Giant OK Button */}
               <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  dismissTutorial();
+                onClick={dismissTutorial}
+                className="btn-accent px-16 py-5 rounded-full font-sans text-[13px] uppercase tracking-widest font-bold shadow-lg hover:shadow-xl transition-all duration-300 scale-105 hover:scale-110 active:scale-95"
+                style={{
+                  border: "2px solid rgba(255,255,255,0.2)",
+                  minWidth: "220px",
                 }}
-                className="btn-accent px-8 py-3 rounded-full font-sans text-[11px] uppercase tracking-widest font-semibold shadow-md hover:shadow-lg transition-all duration-300"
               >
-                Explore Site
+                OK
               </button>
             </div>
 
