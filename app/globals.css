@@ -1,6 +1,4 @@
 /* ── FONTS ──────────────────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Great+Vibes&family=Jost:wght@300;400&display=swap');
-
 @import "tailwindcss";
 
 /* ── DESIGN TOKENS ──────────────────────────────────────────────────── */
@@ -34,10 +32,10 @@
   --color-ivory:     #fdfaf5;
 
   /* Fonts */
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-serif:   "Cormorant Garamond", Georgia, serif;
-  --font-script:  "Great Vibes", cursive;
-  --font-sans:    "Jost", system-ui, sans-serif;
+  --font-display: var(--font-display), Georgia, serif;
+  --font-serif:   var(--font-display), Georgia, serif;
+  --font-script:  var(--font-script), cursive;
+  --font-sans:    var(--font-sans), system-ui, sans-serif;
 
   /* Breakpoints */
   --breakpoint-xs: 390px;
@@ -77,13 +75,13 @@ html {
 body {
   background: #f5ede0;
   color: #1a1a1a;
-  font-family: "Jost", system-ui, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
 }
 
 /* ── FONT HELPERS ────────────────────────────────────────────────────── */
-.font-display  { font-family: "Cormorant Garamond", Georgia, serif; }
-.font-serif    { font-family: "Cormorant Garamond", Georgia, serif; }
-.font-script   { font-family: "Great Vibes", cursive; }
+.font-display  { font-family: var(--font-display), Georgia, serif; }
+.font-serif    { font-family: var(--font-display), Georgia, serif; }
+.font-script   { font-family: var(--font-script), cursive; }
 /* .font-sans already works via Tailwind token above */
 
 /* ── LABEL CAPS ──────────────────────────────────────────────────────── */

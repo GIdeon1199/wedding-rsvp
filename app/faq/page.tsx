@@ -29,7 +29,7 @@ const faqs: FAQ[] = [
   },
   {
     q: "What is the RSVP deadline?",
-    a: <>Please RSVP by <strong>{WEDDING_CONFIG.rsvpDeadline}</strong>. After that date, we won't be able to guarantee your seat as final headcounts will be confirmed with our caterer and venue.</>,
+    a: <>Please RSVP by <strong>{WEDDING_CONFIG.rsvpDeadline}</strong>. After that date, we won&apos;t be able to guarantee your seat as final headcounts will be confirmed with our caterer and venue.</>,
   },
   {
     q: "Is the reception adults-only?",
@@ -37,11 +37,11 @@ const faqs: FAQ[] = [
   },
   {
     q: "Can I bring a plus one?",
-    a: <>Please check your invitation for plus-one details. If you received an invitation addressed to <strong>'you and guest,'</strong> you are welcome to bring one additional guest. Please indicate this in your RSVP.</>,
+    a: <>Please check your invitation for plus-one details. If you received an invitation addressed to <strong>&apos;you and guest,&apos;</strong> you are welcome to bring one additional guest. Please indicate this in your RSVP.</>,
   },
   {
     q: "What should I wear?",
-    a: <>The dress code is <strong>{WEDDING_CONFIG.dressCode}</strong>. We'd love to see guests in elegant attire. Please check our Dress Code page for colour suggestions and style guidance. <strong>Please avoid wearing white or cream — that's for the bride!</strong></>,
+    a: <>The dress code is <strong>{WEDDING_CONFIG.dressCode}</strong>. We&apos;d love to see guests in elegant attire. Please check our Dress Code page for colour suggestions and style guidance. <strong>Please avoid wearing white or cream — that&apos;s for the bride!</strong></>,
   },
   {
     q: "Will there be transportation between venues?",
@@ -57,11 +57,11 @@ const faqs: FAQ[] = [
   },
   {
     q: "Can I take photos during the ceremony?",
-    a: <>We're having an <strong>'unplugged ceremony'</strong> — please keep phones and cameras away during the ceremony so everyone can be fully present. Our photographer will capture everything beautifully. <strong>Photography is absolutely encouraged at the reception!</strong></>,
+    a: <>We&apos;re having an <strong>&apos;unplugged ceremony&apos;</strong> — please keep phones and cameras away during the ceremony so everyone can be fully present. Our photographer will capture everything beautifully. <strong>Photography is absolutely encouraged at the reception!</strong></>,
   },
   {
     q: "What if I have a question not answered here?",
-    a: <>We're happy to help! Reach out to us at <strong>{WEDDING_CONFIG.contactEmail}</strong> or <strong>{WEDDING_CONFIG.contactEmail2}</strong> and we'll get back to you as soon as possible.</>,
+    a: <>We&apos;re happy to help! Reach out to us at <strong>{WEDDING_CONFIG.contactEmail}</strong> or <strong>{WEDDING_CONFIG.contactEmail2}</strong> and we&apos;ll get back to you as soon as possible.</>,
   },
 ];
 

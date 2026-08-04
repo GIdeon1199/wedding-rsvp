@@ -5,6 +5,27 @@ import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
 import { WEDDING_CONFIG } from "@/lib/wedding-config";
 
+import { Cormorant_Garamond, Great_Vibes, Jost } from "next/font/google";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-display",
+});
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-script",
+});
+
+const jost = Jost({
+  subsets: ["latin"],
+  weight: ["300", "400"],
+  variable: "--font-sans",
+});
+
 export const metadata: Metadata = {
   title: `${WEDDING_CONFIG.coupleDisplay} — ${WEDDING_CONFIG.weddingDateDisplay}`,
   description: `Join us as we celebrate the marriage of ${WEDDING_CONFIG.coupleDisplay} on ${WEDDING_CONFIG.weddingDateDisplay} at ${WEDDING_CONFIG.ceremonyVenue}. RSVP online — no account required.`,
@@ -18,7 +39,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`${cormorant.variable} ${greatVibes.variable} ${jost.variable} scroll-smooth`}>
       <body className="antialiased bg-cream-200 text-charcoal">
         <Toaster
           position="top-center"

@@ -315,14 +315,14 @@ export default function HomePage() {
       ════════════════════════════════════════════════════════════════ */}
       <section
         id="our-story"
-        className="py-16 px-4 sm:py-20 sm:px-10 bg-[url('/StoryImgBg.png')] bg-cover bg-[position:85%_center] sm:bg-center"
+        className="py-16 px-4 sm:py-20 sm:px-10 bg-[url('/StoryImgBg.png')] bg-cover bg-left lg:bg-center"
       >
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
             {/* LEFT — text */}
-            <Reveal direction="left">
-              <div className="space-y-4 max-w-[85%] sm:max-w-md bg-white/85 backdrop-blur-md p-8 sm:p-10 rounded-3xl border border-white/60 shadow-lg">
+            <Reveal direction="left" className="order-2 lg:order-1">
+              <div className="space-y-4 max-w-[92%] sm:max-w-md mx-auto lg:mx-0 bg-white/85 backdrop-blur-md p-8 sm:p-10 rounded-3xl border border-white/60 shadow-lg">
                 {/* Label */}
                 <p className="label-caps" style={{ color: "#a87834" }}>
                   Our Story
@@ -377,6 +377,17 @@ export default function HomePage() {
               </div>
             </Reveal>
 
+            {/* RIGHT — image (only visible on mobile/tablet, since on desktop the background image shows it) */}
+            <Reveal direction="right" className="block lg:hidden w-full order-1 lg:order-2">
+              <div className="relative w-full aspect-[4/5] max-w-sm mx-auto rounded-t-full overflow-hidden border border-gold-400/20 shadow-md">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/StoryImgBg.png"
+                  alt="Ishmael and Beryl"
+                  className="w-full h-full object-cover object-[85%_center]"
+                />
+              </div>
+            </Reveal>
 
           </div>
         </div>
