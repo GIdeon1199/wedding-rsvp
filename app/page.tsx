@@ -279,13 +279,13 @@ export default function HomePage() {
           className="absolute flex flex-col items-center gap-1.5"
           style={{ bottom: "2rem", left: "50%", transform: "translateX(-50%)" }}
         >
-          <p className="label-caps font-medium" style={{ color: "#c9924a", fontSize: "13px", textShadow: "0 1px 4px rgba(15, 28, 53, 0.5)" }}>
+          <p className="font-sans font-extrabold text-center uppercase tracking-normal" style={{ color: "#c9924a", fontSize: "14px", textShadow: "0 1px 4px rgba(15, 28, 53, 0.5)" }}>
             Scroll down to reveal more
           </p>
           <motion.span
             animate={{ y: [0, 5, 0] }}
             transition={{ duration: 1.6, repeat: Infinity }}
-            style={{ color: "#c9924a", fontSize: "18px", textShadow: "0 1px 4px rgba(15, 28, 53, 0.5)" }}
+            style={{ color: "#c9924a", fontSize: "20px", fontWeight: "bold", textShadow: "0 1px 4px rgba(15, 28, 53, 0.5)" }}
           >
             ↓
           </motion.span>
@@ -554,7 +554,7 @@ export default function HomePage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-navy-500/90 backdrop-blur-md flex flex-col justify-between p-8 text-white select-none"
+            className="fixed inset-0 z-50 bg-navy-500/95 backdrop-blur-md flex flex-col justify-between p-8 text-white select-none"
           >
             {/* Top Menu Pointer */}
             <div className="absolute top-6 right-6 text-right flex flex-col items-end gap-3 max-w-[240px]">
@@ -566,8 +566,8 @@ export default function HomePage() {
                 >
                   →
                 </motion.div>
-                <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center bg-white/10 text-white shadow-inner">
-                  <Menu size={18} />
+                <div className="w-11 h-11 rounded-full border border-gold-400/40 flex items-center justify-center bg-navy-500/65 text-gold-400 shadow-lg backdrop-blur-sm">
+                  <Menu size={20} />
                 </div>
               </div>
               <p className="font-sans text-[11px] uppercase tracking-wider text-white font-medium leading-relaxed">
@@ -578,21 +578,27 @@ export default function HomePage() {
             {/* Center Content */}
             <div className="flex-1 flex flex-col items-center justify-center text-center px-6 max-w-md mx-auto">
               <p className="font-script text-5xl text-gold-400 mb-2">Welcome to Our Site</p>
-              <h2 className="font-display text-2xl font-light text-white mb-8 uppercase tracking-wider">
+              <h2 className="font-display text-2xl font-light text-white mb-10 uppercase tracking-wider">
                 Ishmael & Beryl
               </h2>
               
-              {/* Giant OK Button */}
-              <button
-                onClick={dismissTutorial}
-                className="btn-accent px-16 py-5 rounded-full font-sans text-[13px] uppercase tracking-widest font-bold shadow-lg hover:shadow-xl transition-all duration-300 scale-105 hover:scale-110 active:scale-95"
-                style={{
-                  border: "2px solid rgba(255,255,255,0.2)",
-                  minWidth: "220px",
-                }}
-              >
-                OK
-              </button>
+              {/* CLICK OK TO CONTINUE Guide */}
+              <div className="flex flex-col items-center gap-3.5 mb-6">
+                <p className="font-sans text-sm font-extrabold text-gold-400 uppercase tracking-[0.2em] animate-pulse">
+                  CLICK OK TO CONTINUE
+                </p>
+                {/* Giant OK Button */}
+                <button
+                  onClick={dismissTutorial}
+                  className="btn-accent px-20 py-6 rounded-full font-sans text-[14px] uppercase tracking-widest font-black shadow-xl hover:shadow-2xl transition-all duration-300 scale-105 hover:scale-110 active:scale-95 cursor-pointer"
+                  style={{
+                    border: "2px solid rgba(255,255,255,0.25)",
+                    minWidth: "240px",
+                  }}
+                >
+                  OK
+                </button>
+              </div>
             </div>
 
             {/* Bottom Guidance Area (Scroll Cue & RSVP Instructions stacked vertically) */}
@@ -602,14 +608,14 @@ export default function HomePage() {
                 <motion.p
                   animate={{ y: [0, 6, 0] }}
                   transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-                  className="font-sans text-[11px] uppercase tracking-[0.25em] text-gold-400 font-semibold"
+                  className="font-sans text-[13px] font-extrabold uppercase text-gold-400 text-center tracking-normal"
                 >
                   Scroll down to reveal more
                 </motion.p>
                 <motion.span
                   animate={{ y: [0, 4, 0] }}
                   transition={{ repeat: Infinity, duration: 1.5 }}
-                  className="text-gold-400 text-lg"
+                  className="text-gold-400 text-xl font-bold"
                 >
                   ↓
                 </motion.span>

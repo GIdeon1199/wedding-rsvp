@@ -139,17 +139,19 @@ export default function Navigation() {
                 RSVP Now
               </Link>
 
-              {/* Mobile toggle */}
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="lg:hidden p-2"
+                className="lg:hidden w-11 h-11 rounded-full flex items-center justify-center border border-gold-400/40"
                 style={{
-                  color: navTransparent ? "#fff" : "#0f1c35",
-                  transition: "color 0.3s",
+                  color: "#c9924a",
+                  background: "rgba(15, 28, 53, 0.65)",
+                  backdropFilter: "blur(6px)",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                  transition: "background 0.3s, color 0.3s",
                 }}
                 aria-label="Toggle menu"
               >
-                {menuOpen ? <X size={22} /> : <Menu size={22} />}
+                {menuOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
             </div>
           </div>
