@@ -279,13 +279,13 @@ export default function HomePage() {
           className="absolute flex flex-col items-center gap-1.5"
           style={{ bottom: "2rem", left: "50%", transform: "translateX(-50%)" }}
         >
-          <p className="font-sans font-extrabold text-center uppercase tracking-normal" style={{ color: "#c9924a", fontSize: "14px", textShadow: "0 1px 4px rgba(15, 28, 53, 0.5)" }}>
+          <p className="font-sans font-extrabold text-center uppercase tracking-normal" style={{ color: "#c9924a", fontSize: "14px" }}>
             Scroll down to reveal more
           </p>
           <motion.span
             animate={{ y: [0, 5, 0] }}
             transition={{ duration: 1.6, repeat: Infinity }}
-            style={{ color: "#c9924a", fontSize: "20px", fontWeight: "bold", textShadow: "0 1px 4px rgba(15, 28, 53, 0.5)" }}
+            style={{ color: "#c9924a", fontSize: "20px", fontWeight: "bold" }}
           >
             ↓
           </motion.span>
