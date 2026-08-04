@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "@/components/Reveal";
 import { WEDDING_CONFIG } from "@/lib/wedding-config";
 import { Calendar, MapPin, User, Mail, ArrowRight } from "lucide-react";
@@ -27,13 +27,36 @@ function getTimeLeft() {
 export default function HomePage() {
   const [mounted, setMounted] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [showFloatingRsvp, setShowFloatingRsvp] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
 
   useEffect(() => {
     setMounted(true);
     setTimeLeft(getTimeLeft());
     const id = setInterval(() => setTimeLeft(getTimeLeft()), 1000);
-    return () => clearInterval(id);
+
+    // Onboarding tutorial check
+    const tutorialSeen = sessionStorage.getItem("tutorial_seen");
+    if (!tutorialSeen) {
+      setShowTutorial(true);
+    }
+
+    // Scroll listener for floating RSVP button
+    const handleScroll = () => {
+      setShowFloatingRsvp(window.scrollY > 500);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      clearInterval(id);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
+
+  const dismissTutorial = () => {
+    setShowTutorial(false);
+    sessionStorage.setItem("tutorial_seen", "true");
+  };
 
   const countUnits = [
     { value: timeLeft.days, label: "Days" },
@@ -184,10 +207,10 @@ export default function HomePage() {
               textShadow: "0 0 20px rgba(245, 237, 224, 0.9)"
             }}
           >
-            {/* format: 17 | 10 | 2026 */}
-            17
-            <span style={{ color: "#c9924a", margin: "0 10px" }}>|</span>
+            {/* format: 10 | 17 | 2026 */}
             10
+            <span style={{ color: "#c9924a", margin: "0 10px" }}>|</span>
+            17
             <span style={{ color: "#c9924a", margin: "0 10px" }}>|</span>
             2026
           </motion.p>
@@ -245,13 +268,13 @@ export default function HomePage() {
           className="absolute flex flex-col items-center gap-1.5"
           style={{ bottom: "2rem", left: "50%", transform: "translateX(-50%)" }}
         >
-          <p className="label-caps" style={{ color: "#c9924a", fontSize: "11px", textShadow: "0 1px 4px rgba(15, 28, 53, 0.5)" }}>
-            Scroll down to begin
+          <p className="label-caps font-medium" style={{ color: "#c9924a", fontSize: "13px", textShadow: "0 1px 4px rgba(15, 28, 53, 0.5)" }}>
+            Scroll down to reveal more
           </p>
           <motion.span
             animate={{ y: [0, 5, 0] }}
             transition={{ duration: 1.6, repeat: Infinity }}
-            style={{ color: "#c9924a", fontSize: "16px", textShadow: "0 1px 4px rgba(15, 28, 53, 0.5)" }}
+            style={{ color: "#c9924a", fontSize: "18px", textShadow: "0 1px 4px rgba(15, 28, 53, 0.5)" }}
           >
             ↓
           </motion.span>
@@ -491,6 +514,89 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+
+      {/* Floating RSVP Button */}
+      <AnimatePresence>
+        {showFloatingRsvp && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 50 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            className="fixed bottom-6 right-6 z-40"
+          >
+            <Link
+              href="/rsvp"
+              className="btn-accent flex items-center justify-center gap-2 px-6 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-sans text-[11px] font-semibold uppercase tracking-[0.2em]"
+            >
+              RSVP
+              <ArrowRight size={14} />
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Onboarding Tutorial Overlay */}
+      <AnimatePresence>
+        {showTutorial && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-navy-500/90 backdrop-blur-md flex flex-col justify-between p-8 text-white select-none cursor-pointer"
+            onClick={dismissTutorial}
+          >
+            {/* Top Menu Pointer */}
+            <div className="absolute top-6 right-6 text-right flex flex-col items-end gap-2 max-w-[220px]">
+              <motion.div
+                animate={{ y: [0, -6, 0], x: [0, 6, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                className="text-gold-400 text-3xl font-light"
+              >
+                ↗
+              </motion.div>
+              <p className="font-sans text-[11px] uppercase tracking-wider text-white font-medium leading-relaxed">
+                Click the menu here to explore more pages
+              </p>
+            </div>
+
+            {/* Center Content */}
+            <div className="flex-1 flex flex-col items-center justify-center text-center px-6 max-w-md mx-auto">
+              <p className="font-script text-4xl text-gold-400 mb-2">Welcome to Our Site</p>
+              <h2 className="font-display text-2xl font-light text-white mb-6 uppercase tracking-wider">
+                Ishmael & Beryl
+              </h2>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  dismissTutorial();
+                }}
+                className="btn-accent px-8 py-3 rounded-full font-sans text-[11px] uppercase tracking-widest font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                Explore Site
+              </button>
+            </div>
+
+            {/* Bottom Scroll Indicator */}
+            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 text-center flex flex-col items-center gap-2">
+              <motion.p
+                animate={{ y: [0, 8, 0] }}
+                transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+                className="font-sans text-[12px] uppercase tracking-[0.25em] text-gold-400 font-semibold"
+              >
+                Scroll down to reveal more
+              </motion.p>
+              <motion.span
+                animate={{ y: [0, 5, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5 }}
+                className="text-gold-400 text-xl"
+              >
+                ↓
+              </motion.span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
