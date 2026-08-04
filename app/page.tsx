@@ -554,40 +554,93 @@ export default function HomePage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-navy-500/95 backdrop-blur-md flex flex-col justify-between p-8 text-white select-none"
+            className="fixed inset-0 z-50 bg-navy-500/95 backdrop-blur-md flex flex-col justify-center p-4 text-white select-none overflow-y-auto"
           >
-            {/* Top Menu Pointer */}
-            <div className="absolute top-6 right-6 text-right flex flex-col items-end gap-3 max-w-[240px]">
-              <div className="flex items-center gap-3">
-                <motion.div
-                  animate={{ x: [0, 8, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-                  className="text-gold-400 text-3xl font-light"
-                >
-                  →
-                </motion.div>
-                <div className="w-11 h-11 rounded-full border border-gold-400/40 flex items-center justify-center bg-navy-500/65 text-gold-400 shadow-lg backdrop-blur-sm">
-                  <Menu size={20} />
+            <div className="w-full max-w-lg mx-auto flex flex-col justify-center py-6">
+              {/* Header */}
+              <div className="text-center mb-6">
+                <span className="font-sans text-[11px] font-black uppercase tracking-[0.2em] bg-gold-400/20 text-gold-400 px-4.5 py-1.5 rounded-full border border-gold-400/30">
+                  Website Tutorial / Guide
+                </span>
+                <h1 className="font-display text-3xl font-light text-white mt-4">
+                  How to Use Our Website
+                </h1>
+                <p className="font-sans text-[13px] text-white/70 mt-2 leading-relaxed">
+                  Welcome! We want to make sure you can find all the details. Here is a quick guide on how to navigate this site:
+                </p>
+              </div>
+
+              {/* Steps Card */}
+              <div className="space-y-5 my-5 bg-white/5 p-5 rounded-2xl border border-white/10 shadow-inner">
+                {/* Step 1 */}
+                <div className="flex items-center justify-between gap-4 pb-4 border-b border-white/5">
+                  <div className="flex-1 pr-2">
+                    <h3 className="font-sans text-xs font-black text-gold-400 uppercase tracking-wider">
+                      Step 1: Find Other Pages (Menu)
+                    </h3>
+                    <p className="font-sans text-[12px] text-white/80 mt-1 leading-relaxed">
+                      Use the <strong>Menu Button</strong> in the top-right corner to visit our Schedule, Location, and Registry.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span className="text-gold-400 text-lg">→</span>
+                    <div className="w-11 h-11 rounded-full border border-gold-400/40 flex items-center justify-center bg-navy-500/65 text-gold-400 shadow-md backdrop-blur-sm">
+                      <Menu size={20} />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Step 2 */}
+                <div className="flex items-center justify-between gap-4 pb-4 border-b border-white/5">
+                  <div className="flex-1 pr-2">
+                    <h3 className="font-sans text-xs font-black text-gold-400 uppercase tracking-wider">
+                      Step 2: Scroll for Details
+                    </h3>
+                    <p className="font-sans text-[12px] text-white/80 mt-1 leading-relaxed">
+                      <strong>Scroll down</strong> on the screen to read our love story, see photos, and view the countdown timer.
+                    </p>
+                  </div>
+                  <motion.div
+                    animate={{ y: [0, 4, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.5 }}
+                    className="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-gold-400 shrink-0 font-bold text-lg"
+                  >
+                    ↓
+                  </motion.div>
+                </div>
+
+                {/* Step 3 */}
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex-1 pr-2">
+                    <h3 className="font-sans text-xs font-black text-gold-400 uppercase tracking-wider">
+                      Step 3: RSVP to Register
+                    </h3>
+                    <p className="font-sans text-[12px] text-white/80 mt-1 leading-relaxed">
+                      Click the gold <strong>RSVP Button</strong> that appears in the bottom-right corner to register for the wedding.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span className="text-gold-400 text-lg">→</span>
+                    <div className="btn-accent flex items-center justify-center gap-2 px-5 py-2.5 rounded-full shadow-md font-sans text-[10px] font-semibold uppercase tracking-[0.2em] pointer-events-none">
+                      RSVP
+                      <ArrowRight size={12} />
+                    </div>
+                  </div>
                 </div>
               </div>
-              <p className="font-sans text-[11px] uppercase tracking-wider text-white font-medium leading-relaxed">
-                Click this menu icon to explore more pages
-              </p>
-            </div>
 
-            {/* Center Content */}
-            <div className="flex-1 flex flex-col items-center justify-center text-center px-6 max-w-md mx-auto">
-              <p className="font-script text-5xl text-gold-400 mb-2">Welcome to Our Site</p>
-              <h2 className="font-display text-2xl font-light text-white mb-10 uppercase tracking-wider">
-                Ishmael & Beryl
-              </h2>
-              
-              {/* CLICK OK TO CONTINUE Guide */}
-              <div className="flex flex-col items-center gap-3.5 mb-6">
-                <p className="font-sans text-sm font-extrabold text-gold-400 uppercase tracking-[0.2em] animate-pulse">
+              {/* Disclaimer */}
+              <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4.5 mb-6">
+                <p className="font-sans text-[11px] text-red-300 leading-relaxed text-center font-semibold">
+                  ⚠️ NOTE: The buttons and icons shown inside the box above are just pictures for practice. They will not click yet. Click the giant "OK" button below to open the website and start clicking.
+                </p>
+              </div>
+
+              {/* OK Action Button */}
+              <div className="text-center flex flex-col items-center gap-3">
+                <p className="font-sans text-[11px] font-black text-gold-400 uppercase tracking-[0.25em] animate-pulse">
                   CLICK OK TO CONTINUE
                 </p>
-                {/* Giant OK Button */}
                 <button
                   onClick={dismissTutorial}
                   className="btn-accent px-20 py-6 rounded-full font-sans text-[14px] uppercase tracking-widest font-black shadow-xl hover:shadow-2xl transition-all duration-300 scale-105 hover:scale-110 active:scale-95 cursor-pointer"
@@ -598,47 +651,6 @@ export default function HomePage() {
                 >
                   OK
                 </button>
-              </div>
-            </div>
-
-            {/* Bottom Guidance Area (Scroll Cue & RSVP Instructions stacked vertically) */}
-            <div className="absolute bottom-6 left-0 right-0 flex flex-col items-center gap-6 text-center px-4">
-              {/* Scroll Indicator */}
-              <div className="flex flex-col items-center gap-2">
-                <motion.p
-                  animate={{ y: [0, 6, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-                  className="font-sans text-[13px] font-extrabold uppercase text-gold-400 text-center tracking-normal"
-                >
-                  Scroll down to reveal more
-                </motion.p>
-                <motion.span
-                  animate={{ y: [0, 4, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5 }}
-                  className="text-gold-400 text-xl font-bold"
-                >
-                  ↓
-                </motion.span>
-              </div>
-
-              {/* RSVP Guide */}
-              <div className="flex flex-col items-center gap-2 max-w-xs">
-                <div className="flex items-center gap-3">
-                  <motion.div
-                    animate={{ x: [0, 6, 0] }}
-                    transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-                    className="text-gold-400 text-2xl font-light"
-                  >
-                    →
-                  </motion.div>
-                  <div className="btn-accent flex items-center justify-center gap-2 px-5 py-2 rounded-full shadow-md font-sans text-[10px] font-semibold uppercase tracking-[0.2em] pointer-events-none">
-                    RSVP
-                    <ArrowRight size={12} />
-                  </div>
-                </div>
-                <p className="font-sans text-[11px] uppercase tracking-wider text-white font-medium leading-relaxed">
-                  Click the RSVP button to register for the wedding
-                </p>
               </div>
             </div>
           </motion.div>
