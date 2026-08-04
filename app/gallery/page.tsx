@@ -8,15 +8,17 @@ import { WEDDING_CONFIG } from "@/lib/wedding-config";
 import { X, ZoomIn, Camera } from "lucide-react";
 
 const photos = [
-  { id: 1, src: "/pre1.jpg", alt: "", rotate: "-2deg", size: "lg" },
-  { id: 2, src: "/pre2.jpg", alt: "", rotate: "1.5deg", size: "md" },
-  { id: 3, src: "/pre3.jpg", alt: "", rotate: "-1deg", size: "md" },
-  { id: 4, src: "/pre4.jpg", alt: "", rotate: "2deg", size: "lg" },
-  { id: 5, src: "/pre5.jpg", alt: "", rotate: "-1.5deg", size: "sm" },
-  { id: 6, src: "/pre6.jpg", alt: "", rotate: "1deg", size: "md" },
-  { id: 7, src: "/pre7.jpg", alt: "", rotate: "-2.5deg", size: "sm" },
-  { id: 8, src: "/pre8.jpg", alt: "", rotate: "1.5deg", size: "lg" },
-  { id: 9, src: "/pre9.jpg", alt: "", rotate: "-1deg", size: "md" },
+  { id: 1, src: "/proposal.jpeg", alt: "The Proposal", rotate: "1.5deg", size: "lg" },
+  { id: 2, src: "/proposal1.jpeg", alt: "The Proposal Celebration", rotate: "-2deg", size: "md" },
+  { id: 3, src: "/pre1.jpg", alt: "", rotate: "-2deg", size: "lg" },
+  { id: 4, src: "/pre2.jpg", alt: "", rotate: "1.5deg", size: "md" },
+  { id: 5, src: "/pre3.jpg", alt: "", rotate: "-1deg", size: "md" },
+  { id: 6, src: "/pre4.jpg", alt: "", rotate: "2deg", size: "lg" },
+  { id: 7, src: "/pre5.jpg", alt: "", rotate: "-1.5deg", size: "sm" },
+  { id: 8, src: "/pre6.jpg", alt: "", rotate: "1deg", size: "md" },
+  { id: 9, src: "/pre7.jpg", alt: "", rotate: "-2.5deg", size: "sm" },
+  { id: 10, src: "/pre8.jpg", alt: "", rotate: "1.5deg", size: "lg" },
+  { id: 11, src: "/pre9.jpg", alt: "", rotate: "-1deg", size: "md" },
 ];
 
 export default function GalleryPage() {
