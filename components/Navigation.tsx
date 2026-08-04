@@ -119,8 +119,8 @@ export default function Navigation() {
                 href="/rsvp"
                 className="hidden lg:inline-flex items-center label-caps"
                 style={{
-                  fontSize: "11px",
-                  padding: "9px 22px",
+                  fontSize: "13px",
+                  padding: "10px 24px",
                   border: "1.5px solid #c9924a",
                   color: navTransparent ? "#c9924a" : "#c9924a",
                   background: "transparent",

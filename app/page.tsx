@@ -257,16 +257,16 @@ export default function HomePage() {
           >
             <Link
               href="/rsvp"
-              className="btn-accent flex items-center justify-center gap-3 w-full py-3 rounded-sm shadow-sm"
+              className="btn-accent flex items-center justify-center gap-3 w-full py-4 rounded-sm shadow-sm"
               style={{
-                fontSize: "11px",
+                fontSize: "14px",
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
                 fontFamily: "Jost, sans-serif",
               }}
             >
               RSVP Now
-              <ArrowRight size={13} />
+              <ArrowRight size={14} />
             </Link>
           </motion.div>
         </div>
@@ -279,7 +279,7 @@ export default function HomePage() {
           className="absolute flex flex-col items-center gap-1.5"
           style={{ bottom: "2rem", left: "50%", transform: "translateX(-50%)" }}
         >
-          <p className="font-sans font-extrabold text-center uppercase tracking-normal" style={{ color: "#c9924a", fontSize: "14px" }}>
+          <p className="font-sans font-extrabold text-center uppercase tracking-normal" style={{ color: "#c9924a", fontSize: "18px" }}>
             Scroll down to reveal more
           </p>
           <motion.span
@@ -538,10 +538,10 @@ export default function HomePage() {
           >
             <Link
               href="/rsvp"
-              className="btn-accent flex items-center justify-center gap-2 px-6 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-sans text-[11px] font-semibold uppercase tracking-[0.2em]"
+              className="btn-accent flex items-center justify-center gap-2 px-7 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-sans text-sm font-bold uppercase tracking-[0.2em]"
             >
               RSVP
-              <ArrowRight size={14} />
+              <ArrowRight size={15} />
             </Link>
           </motion.div>
         )}
@@ -632,7 +632,7 @@ export default function HomePage() {
               {/* Disclaimer */}
               <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4.5 mb-6">
                 <p className="font-sans text-[11px] text-red-300 leading-relaxed text-center font-semibold">
-                  ⚠️ NOTE: The buttons and icons shown inside the box above are just pictures for practice. They will not click yet. Click the giant "OK" button below to open the website and start clicking.
+                  ⚠️ NOTE: The buttons and icons shown inside the box above are just pictures for practice. They will not click yet. Click the giant &quot;OK&quot; button below to open the website and start clicking.
                 </p>
               </div>
 

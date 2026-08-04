@@ -25,7 +25,7 @@ export default function RSVPPage() {
           <Reveal>
             <div className="flex items-center justify-center gap-3 mb-5">
               <Gem size={14} strokeWidth={1.5} className="text-gold-400" />
-              <p className="font-sans text-[10px] uppercase tracking-[0.45em] text-gold-400">
+              <p className="font-sans text-[12px] uppercase tracking-[0.4em] text-gold-400">
                 Kindly respond by {WEDDING_CONFIG.rsvpDeadline}
               </p>
               <Gem size={14} strokeWidth={1.5} className="text-gold-400" />
@@ -45,7 +45,7 @@ export default function RSVPPage() {
         <div className="max-w-lg mx-auto">
           <Reveal>
             <div className="text-center mb-12">
-              <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-gold-500 mb-3">
+              <p className="font-sans text-[12px] uppercase tracking-[0.4em] text-gold-500 mb-3">
                 RSVP Form
               </p>
               <h2 className="font-display text-4xl font-light text-navy-500 mb-5">
@@ -56,7 +56,7 @@ export default function RSVPPage() {
                 <div className="ornament-diamond" />
                 <div className="h-px w-12 bg-gold-400/50" />
               </div>
-              <p className="font-sans text-sm text-navy-500/55 leading-relaxed">
+              <p className="font-sans text-base text-navy-500/60 leading-relaxed">
                 We can&apos;t wait to celebrate with you! Please fill out the form below
                 so we can prepare a place for you at our table. No account or login required.
               </p>
@@ -71,10 +71,10 @@ export default function RSVPPage() {
           {/* Reassurance */}
           <Reveal>
             <div className="mt-8 text-center space-y-2">
-              <p className="font-sans text-xs text-navy-500/35">
+              <p className="font-sans text-[13px] text-navy-500/40">
                 Your information is kept private and will only be used for wedding planning.
               </p>
-              <p className="font-sans text-xs text-navy-500/35">
+              <p className="font-sans text-[13px] text-navy-500/40">
                 Questions? Email us at{" "}
                 <a href={`mailto:${WEDDING_CONFIG.contactEmail}`} className="text-gold-500 hover:underline">
                   {WEDDING_CONFIG.contactEmail}
