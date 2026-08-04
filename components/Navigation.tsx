@@ -75,9 +75,9 @@ export default function Navigation() {
               <Image
                 src="/Websitelogo.png"
                 alt="Logo"
-                width={80}
-                height={44}
-                className="h-11 w-auto object-contain"
+                width={120}
+                height={56}
+                className="h-14 w-auto object-contain"
                 style={{
                   filter: navTransparent ? "brightness(0) invert(1)" : "none",
                   transition: "filter 0.3s",
@@ -185,9 +185,9 @@ export default function Navigation() {
                   <Image
                     src="/Websitelogo.png"
                     alt="Logo"
-                    width={64}
-                    height={36}
-                    className="h-9 w-auto object-contain"
+                    width={96}
+                    height={48}
+                    className="h-12 w-auto object-contain"
                     style={{ filter: "brightness(0) invert(1)" }}
                   />
                   <button
