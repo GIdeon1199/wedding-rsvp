@@ -560,11 +560,11 @@ export default function HomePage() {
             <div className="absolute top-6 right-6 text-right flex flex-col items-end gap-3 max-w-[240px]">
               <div className="flex items-center gap-3">
                 <motion.div
-                  animate={{ y: [0, -6, 0], x: [0, 6, 0] }}
+                  animate={{ x: [0, 8, 0] }}
                   transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
                   className="text-gold-400 text-3xl font-light"
                 >
-                  ↗
+                  →
                 </motion.div>
                 <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center bg-white/10 text-white shadow-inner">
                   <Menu size={18} />
@@ -595,22 +595,45 @@ export default function HomePage() {
               </button>
             </div>
 
-            {/* Bottom Scroll Indicator */}
-            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 text-center flex flex-col items-center gap-2">
-              <motion.p
-                animate={{ y: [0, 8, 0] }}
-                transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-                className="font-sans text-[12px] uppercase tracking-[0.25em] text-gold-400 font-semibold"
-              >
-                Scroll down to reveal more
-              </motion.p>
-              <motion.span
-                animate={{ y: [0, 5, 0] }}
-                transition={{ repeat: Infinity, duration: 1.5 }}
-                className="text-gold-400 text-xl"
-              >
-                ↓
-              </motion.span>
+            {/* Bottom Guidance Area (Scroll Cue & RSVP Instructions stacked vertically) */}
+            <div className="absolute bottom-6 left-0 right-0 flex flex-col items-center gap-6 text-center px-4">
+              {/* Scroll Indicator */}
+              <div className="flex flex-col items-center gap-2">
+                <motion.p
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+                  className="font-sans text-[11px] uppercase tracking-[0.25em] text-gold-400 font-semibold"
+                >
+                  Scroll down to reveal more
+                </motion.p>
+                <motion.span
+                  animate={{ y: [0, 4, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5 }}
+                  className="text-gold-400 text-lg"
+                >
+                  ↓
+                </motion.span>
+              </div>
+
+              {/* RSVP Guide */}
+              <div className="flex flex-col items-center gap-2 max-w-xs">
+                <div className="flex items-center gap-3">
+                  <motion.div
+                    animate={{ x: [0, 6, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                    className="text-gold-400 text-2xl font-light"
+                  >
+                    →
+                  </motion.div>
+                  <div className="btn-accent flex items-center justify-center gap-2 px-5 py-2 rounded-full shadow-md font-sans text-[10px] font-semibold uppercase tracking-[0.2em] pointer-events-none">
+                    RSVP
+                    <ArrowRight size={12} />
+                  </div>
+                </div>
+                <p className="font-sans text-[11px] uppercase tracking-wider text-white font-medium leading-relaxed">
+                  Click the RSVP button to register for the wedding
+                </p>
+              </div>
             </div>
           </motion.div>
         )}
